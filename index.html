@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mehdi El Moussaoui — Mobile & Web Developer</title>
+  <meta name="description" content="Portfolio of Mehdi El Moussaoui, Android & Web Developer based in Tangier, Morocco. Available for internship 2026." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursor-trail"></div>
+
+  <!-- LOADING SCREEN -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">MEHDI<span>.DEV</span></div>
+      <div class="loader-bar"><div class="loader-bar-fill" id="loader-fill"></div></div>
+      <div class="loader-pct" id="loader-pct">0%</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-left">
+      <div class="logo">MEHDI<span>.DEV</span></div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about"><span>01</span> About</a></li>
+      <li><a href="#stack"><span>02</span> Stack</a></li>
+      <li><a href="#skills"><span>03</span> Skills</a></li>
+      <li><a href="#portfolio"><span>04</span> Projects</a></li>
+      <li><a href="#experience"><span>05</span> Education</a></li>
+      <li><a href="#services"><span>06</span> Services</a></li>
+      <li><a href="#contact" class="btn-nav">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="mobile-nav" id="mobile-nav">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#stack" class="mobile-link">Stack</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#portfolio" class="mobile-link">Projects</a></li>
+      <li><a href="#experience" class="mobile-link">Education</a></li>
+      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <span>Tangier, Morocco</span>
+      <span>Available 2026</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+
+    <!-- Floating code snippets -->
+    <div class="hero-code hero-code--1">
+      <span class="code-keyword">val</span> developer = <span class="code-string">"Mehdi"</span>
+    </div>
+    <div class="hero-code hero-code--2">
+      <span class="code-keyword">fun</span> <span class="code-fn">buildApp</span>() &#123; … &#125;
+    </div>
+    <div class="hero-code hero-code--3">
+      <span class="code-comment">// Available for internship</span>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        Available for Internship 2026
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line-stroke">MOBILE</span>
+        <span class="line-accent">&amp; WEB</span>
+        <span class="line-solid">DEVELOPER</span>
+      </h1>
+
+      <p class="hero-desc">
+        I'm <strong>El Mehdi El Moussaoui</strong>, a developer based in
+        <strong>Tangier, Morocco</strong>. I craft native Android apps and
+        modern web experiences — focused on clean architecture and user-first design.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-primary">
+          <i class="fas fa-eye"></i> View Projects
+        </a>
+        <a href="mailto:mehdielmoussaoui25@gmail.com" class="btn-ghost">
+          <i class="fas fa-paper-plane"></i> Hire Me
+        </a>
+      </div>
+
+      <!-- Social quick links -->
+      <div class="hero-socials">
+        <a href="mailto:mehdielmoussaoui25@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+212771189375" title="Phone"><i class="fas fa-phone"></i></a>
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-cue">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+
+    <!-- Floating stats -->
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num" data-count="3">0</div>
+        <div class="stat-label">Apps Built</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="2">0</div>
+        <div class="stat-label">Years Training</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="7">0</div>
+        <div class="stat-label">Technologies</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="dot"></span>Kotlin</div>
+      <div class="marquee-item"><span class="dot"></span>Android Studio</div>
+      <div class="marquee-item"><span class="dot"></span>Java</div>
+      <div class="marquee-item"><span class="dot"></span>Firebase</div>
+      <div class="marquee-item"><span class="dot"></span>HTML &amp; CSS</div>
+      <div class="marquee-item"><span class="dot"></span>JavaScript</div>
+      <div class="marquee-item"><span class="dot"></span>PHP</div>
+      <div class="marquee-item"><span class="dot"></span>SQL</div>
+      <div class="marquee-item"><span class="dot"></span>Figma</div>
+      <div class="marquee-item"><span class="dot"></span>Room DB</div>
+      <div class="marquee-item"><span class="dot"></span>Retrofit</div>
+      <div class="marquee-item"><span class="dot"></span>UI/UX Design</div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item"><span class="dot"></span>Kotlin</div>
+      <div class="marquee-item"><span class="dot"></span>Android Studio</div>
+      <div class="marquee-item"><span class="dot"></span>Java</div>
+      <div class="marquee-item"><span class="dot"></span>Firebase</div>
+      <div class="marquee-item"><span class="dot"></span>HTML &amp; CSS</div>
+      <div class="marquee-item"><span class="dot"></span>JavaScript</div>
+      <div class="marquee-item"><span class="dot"></span>PHP</div>
+      <div class="marquee-item"><span class="dot"></span>SQL</div>
+      <div class="marquee-item"><span class="dot"></span>Figma</div>
+      <div class="marquee-item"><span class="dot"></span>Room DB</div>
+      <div class="marquee-item"><span class="dot"></span>Retrofit</div>
+      <div class="marquee-item"><span class="dot"></span>UI/UX Design</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ ABOUT -->
+  <section id="about">
+    <div class="section-header reveal">
+      <div class="section-label">01 — About Me</div>
+      <h2 class="section-title">WHO I AM</h2>
+    </div>
+    <div class="about-layout">
+      <div class="about-text reveal reveal-delay-1">
+        <p>
+          I'm a <strong>passionate mobile and web developer</strong> from Tangier, Morocco,
+          specializing in Android application development with Kotlin &amp; Java and modern
+          web technologies.
+        </p>
+        <p>
+          Currently completing my <strong>Digital Development — Mobile Applications</strong>
+          diploma at Cité des Métiers et des Compétences de Tanger (CMC), I'm driven by
+          a deep curiosity for building clean, efficient, and user-centric digital products.
+        </p>
+        <p>
+          I care deeply about <strong>user experience</strong> — the way an app feels is
+          just as important as how it functions. I combine solid engineering principles
+          with a designer's eye to deliver interfaces that are both beautiful and performant.
+        </p>
+        <p>
+          Outside of code, I explore <strong>UI/UX design trends</strong>, experiment with
+          Figma prototypes, and manage digital content — keeping my creative and technical
+          skills in balance.
+        </p>
+
+        <div class="about-qualities">
+          <div class="quality"><i class="fas fa-check-circle"></i> Problem Solver</div>
+          <div class="quality"><i class="fas fa-check-circle"></i> Team Player</div>
+          <div class="quality"><i class="fas fa-check-circle"></i> Detail-Oriented</div>
+          <div class="quality"><i class="fas fa-check-circle"></i> Fast Learner</div>
+          <div class="quality"><i class="fas fa-check-circle"></i> UX-Focused</div>
+          <div class="quality"><i class="fas fa-check-circle"></i> Adaptable</div>
+        </div>
+      </div>
+
+      <div class="about-right reveal reveal-delay-2">
+        <div class="about-card">
+          <div class="about-card-row">
+            <span class="key"><i class="fas fa-map-marker-alt"></i> Location</span>
+            <span class="val">Tangier, Morocco</span>
+          </div>
+          <div class="about-card-row">
+            <span class="key"><i class="fas fa-envelope"></i> Email</span>
+            <span class="val">mehdielmoussaoui25@gmail.com</span>
+          </div>
+          <div class="about-card-row">
+            <span class="key"><i class="fas fa-phone"></i> Phone</span>
+            <span class="val">+212 771 189 375</span>
+          </div>
+          <div class="about-card-row">
+            <span class="key"><i class="fas fa-circle"></i> Status</span>
+            <span class="val status-open">● Open to Internship</span>
+          </div>
+          <div class="about-card-row">
+            <span class="key"><i class="fas fa-language"></i> Languages</span>
+            <span class="val">Français · English · العربية</span>
+          </div>
+          <div class="about-card-row">
+            <span class="key"><i class="fas fa-graduation-cap"></i> Diploma</span>
+            <span class="val">BTS Digital Dev — Mobile</span>
+          </div>
+          <div class="about-card-row">
+            <span class="key"><i class="fas fa-school"></i> School</span>
+            <span class="val">CMC Tanger (2024–2026)</span>
+          </div>
+          <div class="about-card-row">
+            <span class="key"><i class="fas fa-bullseye"></i> Focus</span>
+            <span class="val">Android · Web · UI/UX</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-primary about-cta">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ STACK -->
+  <section id="stack" class="section-alt">
+    <div class="section-header reveal">
+      <div class="section-label">02 — Technical Stack</div>
+      <h2 class="section-title">WHAT I BUILD WITH</h2>
+    </div>
+
+    <div class="stack-grid reveal reveal-delay-1">
+      <div class="stack-item">
+        <div class="stack-icon-wrap"><i class="fab fa-android"></i></div>
+        <h3>Android Development</h3>
+        <p>Native Android applications using modern architecture patterns. Proficient in Kotlin and Java with hands-on experience in lifecycle management, navigation components, and custom UI.</p>
+        <ul class="stack-tech-list">
+          <li>Kotlin</li><li>Java</li><li>Android Studio</li><li>Jetpack</li><li>Navigation</li>
+        </ul>
+      </div>
+      <div class="stack-item">
+        <div class="stack-icon-wrap"><i class="fas fa-globe"></i></div>
+        <h3>Web Development</h3>
+        <p>Responsive and performant websites from scratch. Skilled in semantic HTML5, modern CSS3 layouts, vanilla JavaScript, and dynamic PHP backends.</p>
+        <ul class="stack-tech-list">
+          <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>PHP</li><li>Responsive</li>
+        </ul>
+      </div>
+      <div class="stack-item">
+        <div class="stack-icon-wrap"><i class="fas fa-database"></i></div>
+        <h3>Database & Backend</h3>
+        <p>Designing and managing relational databases with SQL and NoSQL cloud solutions. Experience with REST API integration via Retrofit and Firebase real-time database.</p>
+        <ul class="stack-tech-list">
+          <li>SQL</li><li>Firebase</li><li>Room DB</li><li>Retrofit</li><li>REST API</li>
+        </ul>
+      </div>
+      <div class="stack-item">
+        <div class="stack-icon-wrap"><i class="fas fa-pencil-ruler"></i></div>
+        <h3>Design & Digital</h3>
+        <p>Creating clean UI designs and brand visuals. Comfortable with prototyping in Figma, graphic design in Canva, and applying UI/UX principles across mobile and web interfaces.</p>
+        <ul class="stack-tech-list">
+          <li>Figma</li><li>Canva</li><li>UI/UX</li><li>Wireframing</li><li>Social Media</li>
+        </ul>
+      </div>
+      <div class="stack-item">
+        <div class="stack-icon-wrap"><i class="fas fa-vial"></i></div>
+        <h3>Testing & Quality</h3>
+        <p>Ensuring software reliability through structured testing methodologies. Experience with functional testing, UX compatibility tests, cross-browser validation, and performance optimization.</p>
+        <ul class="stack-tech-list">
+          <li>Unit Testing</li><li>UX Testing</li><li>Debugging</li><li>Optimization</li><li>QA</li>
+        </ul>
+      </div>
+      <div class="stack-item">
+        <div class="stack-icon-wrap"><i class="fas fa-tasks"></i></div>
+        <h3>Project & Soft Skills</h3>
+        <p>Familiar with project management methodologies and working in collaborative environments. Strong communicator with time management discipline and a drive for continuous improvement.</p>
+        <ul class="stack-tech-list">
+          <li>Agile</li><li>Git</li><li>Communication</li><li>Teamwork</li><li>Time Management</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ SKILLS -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <div class="section-label">03 — Skills</div>
+      <h2 class="section-title">PROFICIENCY</h2>
+    </div>
+
+    <div class="skills-layout">
+      <div class="skills-bars">
+        <h3 class="skills-sub reveal">Technical Skills</h3>
+
+        <div class="skill-item reveal">
+          <div class="skill-header">
+            <div class="skill-info">
+              <i class="fab fa-android skill-icon"></i>
+              <span class="skill-name">Kotlin</span>
+            </div>
+            <span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div>
+          <p class="skill-desc">Primary language for Android development. Used in all major projects.</p>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-1">
+          <div class="skill-header">
+            <div class="skill-info">
+              <i class="fab fa-java skill-icon"></i>
+              <span class="skill-name">Java</span>
+            </div>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="75%"></div></div>
+          <p class="skill-desc">Used in Android backend logic and inventory management systems.</p>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-2">
+          <div class="skill-header">
+            <div class="skill-info">
+              <i class="fab fa-html5 skill-icon"></i>
+              <span class="skill-name">HTML / CSS</span>
+            </div>
+            <span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div>
+          <p class="skill-desc">Strong foundation. Comfortable with modern layouts, animations and responsive design.</p>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-3">
+          <div class="skill-header">
+            <div class="skill-info">
+              <i class="fab fa-js skill-icon"></i>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="70%"></div></div>
+          <p class="skill-desc">DOM manipulation, event handling, and dynamic page interactivity.</p>
+        </div>
+
+        <div class="skill-item reveal">
+          <div class="skill-header">
+            <div class="skill-info">
+              <i class="fab fa-php skill-icon"></i>
+              <span class="skill-name">PHP</span>
+            </div>
+            <span class="skill-pct">65%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="65%"></div></div>
+          <p class="skill-desc">Server-side scripting for web applications and form handling.</p>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-1">
+          <div class="skill-header">
+            <div class="skill-info">
+              <i class="fas fa-database skill-icon"></i>
+              <span class="skill-name">SQL / Firebase</span>
+            </div>
+            <span class="skill-pct">72%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="72%"></div></div>
+          <p class="skill-desc">Database design, queries, and real-time cloud data syncing.</p>
+        </div>
+
+        <div class="skill-item reveal reveal-delay-2">
+          <div class="skill-header">
+            <div class="skill-info">
+              <i class="fas fa-paint-brush skill-icon"></i>
+              <span class="skill-name">UI/UX Design</span>
+            </div>
+            <span class="skill-pct">78%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="78%"></div></div>
+          <p class="skill-desc">Wireframing, prototyping, and applying human-centered design principles.</p>
+        </div>
+      </div>
+
+      <div class="skills-right">
+        <div class="reveal">
+          <h3 class="skills-sub">Soft Skills</h3>
+          <div class="soft-skills-grid">
+            <div class="soft-skill">
+              <div class="soft-icon"><i class="fas fa-lightbulb"></i></div>
+              <div>
+                <strong>Problem Solving</strong>
+                <p>Analytical approach to debugging and architectural decisions.</p>
+              </div>
+            </div>
+            <div class="soft-skill">
+              <div class="soft-icon"><i class="fas fa-comments"></i></div>
+              <div>
+                <strong>Communication</strong>
+                <p>Clear, concise communicator in both technical and non-technical contexts.</p>
+              </div>
+            </div>
+            <div class="soft-skill">
+              <div class="soft-icon"><i class="fas fa-users"></i></div>
+              <div>
+                <strong>Teamwork</strong>
+                <p>Collaborative team member who thrives in agile environments.</p>
+              </div>
+            </div>
+            <div class="soft-skill">
+              <div class="soft-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <strong>Time Management</strong>
+                <p>Organized and deadline-driven with strong self-management habits.</p>
+              </div>
+            </div>
+            <div class="soft-skill">
+              <div class="soft-icon"><i class="fas fa-sync"></i></div>
+              <div>
+                <strong>Adaptability</strong>
+                <p>Quick to learn new tools, frameworks, and project requirements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2" style="margin-top: 3rem;">
+          <h3 class="skills-sub">Languages</h3>
+          <div class="lang-grid">
+            <div class="lang-item">
+              <div class="lang-flag">🇫🇷</div>
+              <div>
+                <strong>Français</strong>
+                <span class="lang-level">Native</span>
+              </div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-flag">🇬🇧</div>
+              <div>
+                <strong>English</strong>
+                <span class="lang-level">Professional</span>
+              </div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-flag">🇲🇦</div>
+              <div>
+                <strong>العربية</strong>
+                <span class="lang-level">Native</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ PROJECTS -->
+  <section id="portfolio" class="section-alt">
+    <div class="section-header reveal">
+      <div class="section-label">04 — Projects</div>
+      <h2 class="section-title">FEATURED WORK</h2>
+      <p class="section-intro">A selection of real projects built during my training at CMC Tangier.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card reveal">
+        <div class="project-header">
+          <div class="project-num">01</div>
+          <div class="project-links">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3>Wellness Tracker</h3>
+        <p class="project-category"><i class="fab fa-android"></i> Android Application</p>
+        <p class="project-desc">
+          A comprehensive Android app designed to help users build and maintain healthy daily habits.
+          Tracks hydration goals, sleep schedules, physical activity, and meditation sessions
+          with visual progress indicators and reminders.
+        </p>
+        <ul class="project-features">
+          <li>Real-time Firebase data sync across devices</li>
+          <li>Custom progress charts and daily streaks</li>
+          <li>Push notifications for habit reminders</li>
+          <li>Onboarding flow with personalized goals</li>
+        </ul>
+        <div class="project-tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Android</span>
+          <span class="tag">UX Design</span>
+          <span class="tag">Notifications</span>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-header">
+          <div class="project-num">02</div>
+          <div class="project-links">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3>Inventory Manager</h3>
+        <p class="project-category"><i class="fab fa-java"></i> Android + Backend</p>
+        <p class="project-desc">
+          A full-stack inventory management solution built for small businesses. Features
+          a clean product listing interface, category filtering, stock level alerts,
+          and a REST API backend for syncing with a remote SQL database.
+        </p>
+        <ul class="project-features">
+          <li>Retrofit-powered REST API integration</li>
+          <li>SQL database with relational product schema</li>
+          <li>Search, filter and sort functionality</li>
+          <li>Low-stock alerts and reporting</li>
+        </ul>
+        <div class="project-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Retrofit</span>
+          <span class="tag">SQL</span>
+          <span class="tag">REST API</span>
+          <span class="tag">CRUD</span>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-header">
+          <div class="project-num">03</div>
+          <div class="project-links">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Demo"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3>Task Manager</h3>
+        <p class="project-category"><i class="fab fa-android"></i> Android Application</p>
+        <p class="project-desc">
+          A productivity-focused Android app for managing personal tasks and daily planning.
+          Supports priority levels, due dates, and categories. Built offline-first using
+          Room database for fast, reliable local storage with no internet dependency.
+        </p>
+        <ul class="project-features">
+          <li>Room DB for full offline functionality</li>
+          <li>Task priority levels and due date tracking</li>
+          <li>Swipe-to-delete and drag-to-reorder</li>
+          <li>Dark mode support and clean minimal UI</li>
+        </ul>
+        <div class="project-tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Room DB</span>
+          <span class="tag">Android</span>
+          <span class="tag">MVVM</span>
+          <span class="tag">LiveData</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ EDUCATION -->
+  <section id="experience">
+    <div class="section-header reveal">
+      <div class="section-label">05 — Background</div>
+      <h2 class="section-title">EDUCATION</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-date">
+          <span>Sept 2025</span>
+          <span class="timeline-arrow">→</span>
+          <span>Jul 2026</span>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-body">
+          <div class="timeline-badge">Currently Enrolled</div>
+          <h4>Digital Development — Mobile Applications (2A)</h4>
+          <p class="inst"><i class="fas fa-university"></i> Cité des Métiers et des Compétences · Tangier</p>
+          <p class="timeline-desc">
+            Second year specializing in Android development, mobile architecture patterns,
+            and advanced Kotlin programming. Produced the <strong>Wellness Tracker</strong> app
+            as a capstone project, covering full development lifecycle from wireframe to deployment.
+          </p>
+          <div class="timeline-modules">
+            <span>Android Architecture</span>
+            <span>Mobile UI/UX</span>
+            <span>Firebase Integration</span>
+            <span>Project Management</span>
+            <span>Agile Methodology</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-date">
+          <span>Sept 2024</span>
+          <span class="timeline-arrow">→</span>
+          <span>Jul 2025</span>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-body">
+          <div class="timeline-badge completed">Completed</div>
+          <h4>Digital Development — Web (1A)</h4>
+          <p class="inst"><i class="fas fa-university"></i> Cité des Métiers et des Compétences · Tangier</p>
+          <p class="timeline-desc">
+            First year covering foundational web development technologies and quality assurance.
+            Conducted structured <strong>functional, UX, and cross-browser compatibility testing</strong>
+            on web projects to validate stability and user experience across devices.
+          </p>
+          <div class="timeline-modules">
+            <span>HTML / CSS / JS</span>
+            <span>PHP Backend</span>
+            <span>SQL Databases</span>
+            <span>Web Testing</span>
+            <span>UX Fundamentals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ SERVICES -->
+  <section id="services" class="section-alt">
+    <div class="section-header reveal">
+      <div class="section-label">06 — Services</div>
+      <h2 class="section-title">WHAT I OFFER</h2>
+      <p class="section-intro">Services I can provide as an intern or freelance contributor.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Mobile App Development</h3>
+        <p>
+          Native Android applications built with modern architecture principles (MVVM, Clean Architecture).
+          From concept to Play Store — I handle UI design, backend integration, and performance optimization.
+        </p>
+        <div class="service-deliverables">
+          <strong>Deliverables:</strong>
+          <ul>
+            <li>Full Android app (Kotlin/Java)</li>
+            <li>Firebase or REST API integration</li>
+            <li>Clean, scalable codebase</li>
+            <li>Testing and debugging</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02</div>
+        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Website Development</h3>
+        <p>
+          Responsive, modern websites built from scratch with clean HTML5, CSS3 and JavaScript.
+          Backend-capable with PHP and SQL. Focused on performance, accessibility, and cross-browser
+          compatibility.
+        </p>
+        <div class="service-deliverables">
+          <strong>Deliverables:</strong>
+          <ul>
+            <li>Responsive HTML/CSS/JS pages</li>
+            <li>PHP dynamic backend</li>
+            <li>SQL database setup</li>
+            <li>Cross-browser tested</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03</div>
+        <div class="service-icon"><i class="fas fa-vector-square"></i></div>
+        <h3>UI/UX Design</h3>
+        <p>
+          User-centered interface design in Figma — wireframes, prototypes, and full design systems.
+          I follow accessibility standards and mobile-first principles to create interfaces that
+          delight users.
+        </p>
+        <div class="service-deliverables">
+          <strong>Deliverables:</strong>
+          <ul>
+            <li>Figma wireframes &amp; prototypes</li>
+            <li>Component design system</li>
+            <li>Mobile-first layouts</li>
+            <li>Handoff-ready assets</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-num">04</div>
+        <div class="service-icon"><i class="fas fa-bug"></i></div>
+        <h3>Testing & Debugging</h3>
+        <p>
+          Systematic testing for web and mobile applications. I identify bugs, performance
+          bottlenecks and UX friction points through structured QA processes, delivering
+          detailed reports and fixes.
+        </p>
+        <div class="service-deliverables">
+          <strong>Deliverables:</strong>
+          <ul>
+            <li>Functional &amp; UX test reports</li>
+            <li>Cross-device compatibility checks</li>
+            <li>Performance profiling</li>
+            <li>Bug fix implementation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ CONTACT -->
+  <section id="contact">
+    <div class="contact-layout">
+      <div class="contact-left reveal">
+        <div class="section-label">07 — Contact</div>
+        <div class="contact-big">
+          LET'S<br><span>WORK</span><br>TOGETHER
+        </div>
+        <p class="contact-desc">
+          I'm actively looking for an internship in mobile or web development.
+          If you're building something interesting, I'd love to contribute.
+        </p>
+        <a href="mailto:mehdielmoussaoui25@gmail.com" class="btn-primary">
+          <i class="fas fa-paper-plane"></i> Send a Message
+        </a>
+      </div>
+
+      <div class="contact-right reveal reveal-delay-1">
+        <div class="contact-info-block">
+          <h3>Get in Touch</h3>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contact-detail-label">Email</span>
+              <a href="mailto:mehdielmoussaoui25@gmail.com">mehdielmoussaoui25@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <span class="contact-detail-label">Phone</span>
+              <a href="tel:+212771189375">+212 771 189 375</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <span class="contact-detail-label">Location</span>
+              <span>Tangier, Morocco</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <span class="contact-detail-label">Availability</span>
+              <span class="status-open">● Open to internship offers</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <a href="mailto:mehdielmoussaoui25@gmail.com" class="social-btn">
+            <i class="fas fa-envelope"></i><span>Email</span>
+          </a>
+          <a href="#" class="social-btn">
+            <i class="fab fa-github"></i><span>GitHub</span>
+          </a>
+          <a href="#" class="social-btn">
+            <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+          </a>
+          <a href="tel:+212771189375" class="social-btn">
+            <i class="fas fa-phone"></i><span>Call</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="footer-left">© 2026 Mehdi El Moussaoui</div>
+      <div class="footer-center">Built with HTML · CSS · JavaScript</div>
+      <div class="footer-right">Tangier, Morocco</div>
+    </div>
+  </section>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
