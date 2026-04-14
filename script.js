@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
    MEHDI EL MOUSSAOUI — PORTFOLIO
-   script.js
+   script.js  (Updated 2026)
    ═══════════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
       loaderPct.textContent  = '100%';
       setTimeout(() => {
         loader.classList.add('hidden');
-        // Trigger hero counter animation after load
         animateCounters();
       }, 400);
     } else {
@@ -44,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.style.top  = mouseY + 'px';
   });
 
-  // Smooth trailing cursor
   function animateTrail() {
     trailX += (mouseX - trailX) * 0.1;
     trailY += (mouseY - trailY) * 0.1;
@@ -57,9 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('mousedown', () => cursor.classList.add('click'));
   document.addEventListener('mouseup',   () => cursor.classList.remove('click'));
 
-  // Hover effect on interactive elements
   const hoverTargets = document.querySelectorAll(
-    'a, button, .project-card, .stack-item, .service-card, .soft-skill, .lang-item'
+    'a, button, .project-card, .stack-item, .service-card, .soft-skill, .lang-item, .skill-card'
   );
   hoverTargets.forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
@@ -73,21 +70,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNav = document.getElementById('mobile-nav');
   const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  // Scroll sticky
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
     updateActiveNav();
     toggleBackToTop();
   });
 
-  // Hamburger toggle
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
     mobileNav.classList.toggle('open');
     document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
   });
 
-  // Close mobile nav on link click
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('open');
@@ -96,71 +90,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Active nav link highlight based on scroll
   function updateActiveNav() {
     const sections = document.querySelectorAll('section[id], header[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     let currentId = '';
-
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
+      if (window.scrollY >= section.offsetTop - 120) {
         currentId = section.getAttribute('id');
       }
     });
-
     navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + currentId) {
-        link.classList.add('active');
-      }
+      if (link.getAttribute('href') === '#' + currentId) link.classList.add('active');
     });
   }
 
 
   /* ─── 4. SCROLL REVEAL ──────────────────────────────────────── */
-  const reveals = document.querySelectorAll('.reveal');
-
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // Don't unobserve — keep visible once revealed
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  reveals.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 
-  /* ─── 5. SKILL BAR ANIMATION ────────────────────────────────── */
-  const skillItems = document.querySelectorAll('.skill-item');
-
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const fill = entry.target.querySelector('.skill-bar-fill');
-        if (fill && !fill.style.width) {
-          setTimeout(() => {
-            fill.style.width = fill.dataset.width;
-          }, 200);
-        }
-      }
-    });
-  }, { threshold: 0.2 });
-
-  skillItems.forEach(item => skillObserver.observe(item));
-
-
-  /* ─── 6. HERO COUNTERS ──────────────────────────────────────── */
+  /* ─── 5. HERO COUNTERS ──────────────────────────────────────── */
   function animateCounters() {
-    const counters = document.querySelectorAll('.stat-num[data-count]');
-    counters.forEach(counter => {
+    document.querySelectorAll('.stat-num[data-count]').forEach(counter => {
       const target   = parseInt(counter.dataset.count, 10);
       const duration = 1600;
       const step     = duration / target;
       let current    = 0;
-
       const tick = () => {
         current++;
         counter.textContent = current;
@@ -171,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* ─── 7. SMOOTH SECTION LINKS ───────────────────────────────── */
+  /* ─── 6. SMOOTH SCROLL ──────────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       const href = anchor.getAttribute('href');
@@ -179,71 +141,49 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        const offset = 80;
-        const top    = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
         window.scrollTo({ top, behavior: 'smooth' });
       }
     });
   });
 
 
-  /* ─── 8. BACK TO TOP ────────────────────────────────────────── */
+  /* ─── 7. BACK TO TOP ────────────────────────────────────────── */
   const backBtn = document.getElementById('back-to-top');
-
   function toggleBackToTop() {
     backBtn.classList.toggle('visible', window.scrollY > 500);
   }
-
-  backBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 
-  /* ─── 9. TILT EFFECT ON PROJECT CARDS ──────────────────────── */
-  const projectCards = document.querySelectorAll('.project-card');
-
-  projectCards.forEach(card => {
+  /* ─── 8. TILT ON PROJECT CARDS ──────────────────────────────── */
+  document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mousemove', e => {
-      const rect   = card.getBoundingClientRect();
-      const x      = e.clientX - rect.left;
-      const y      = e.clientY - rect.top;
-      const midX   = rect.width  / 2;
-      const midY   = rect.height / 2;
-      const rotateX = ((y - midY) / midY) * -5;
-      const rotateY = ((x - midX) / midX) * 5;
+      const rect = card.getBoundingClientRect();
+      const rotateX = ((e.clientY - rect.top  - rect.height/2) / (rect.height/2)) * -4;
+      const rotateY = ((e.clientX - rect.left - rect.width/2)  / (rect.width/2))  *  4;
       card.style.transform = `translateY(-5px) perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
   });
 
 
-  /* ─── 10. STACK ITEM HOVER GLOW ─────────────────────────────── */
-  const stackItems = document.querySelectorAll('.stack-item');
-
-  stackItems.forEach(item => {
+  /* ─── 9. STACK ITEM GLOW ────────────────────────────────────── */
+  document.querySelectorAll('.stack-item').forEach(item => {
     item.addEventListener('mousemove', e => {
       const rect = item.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width)  * 100;
-      const y = ((e.clientY - rect.top)  / rect.height) * 100;
-      item.style.setProperty('--glow-x', x + '%');
-      item.style.setProperty('--glow-y', y + '%');
+      item.style.setProperty('--glow-x', ((e.clientX - rect.left) / rect.width * 100) + '%');
+      item.style.setProperty('--glow-y', ((e.clientY - rect.top)  / rect.height * 100) + '%');
     });
   });
 
 
-  /* ─── 11. MARQUEE PAUSE ON HOVER ────────────────────────────── */
-  // Handled via CSS (section:hover .marquee-track)
-
-
-  /* ─── 12. TYPING EFFECT IN HERO (optional enhancement) ──────── */
+  /* ─── 10. HERO TAG TYPING ───────────────────────────────────── */
   const heroTag = document.querySelector('.hero-tag');
   if (heroTag) {
-    const text     = 'Available for Internship 2026';
-    const dotHTML  = '<span class="hero-tag-dot"></span>';
-    heroTag.innerHTML = dotHTML; // reset
+    const text    = 'Available for Internship 2026';
+    const dotHTML = '<span class="hero-tag-dot"></span>';
+    heroTag.innerHTML = dotHTML;
     let i = 0;
     const type = () => {
       if (i < text.length) {
@@ -252,54 +192,28 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, 55);
       }
     };
-    // Start typing after loader
     setTimeout(type, 1000);
   }
 
 
-  /* ─── 13. SERVICE CARD ENTRANCE STAGGER ─────────────────────── */
-  const serviceCards = document.querySelectorAll('.service-card');
-  const serviceObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity  = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }, index * 100);
-        serviceObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  serviceCards.forEach(card => {
-    card.style.opacity   = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    serviceObserver.observe(card);
-  });
-
-
-  /* ─── 14. ACTIVE SECTION PROGRESS INDICATOR ─────────────────── */
-  // Thin progress bar at top of page
+  /* ─── 11. SCROLL PROGRESS BAR ───────────────────────────────── */
   const progressBar = document.createElement('div');
   progressBar.style.cssText = `
-    position: fixed; top: 0; left: 0; height: 2px; z-index: 9999;
-    background: linear-gradient(90deg, #c8f04a, #4af0c8);
-    width: 0%; transition: width 0.1s linear; pointer-events: none;
+    position:fixed;top:0;left:0;height:2px;z-index:9999;
+    background:linear-gradient(90deg,#7c6bff,#f5a623);
+    width:0%;transition:width .1s linear;pointer-events:none;
   `;
   document.body.appendChild(progressBar);
-
   window.addEventListener('scroll', () => {
-    const scrollTop    = window.pageYOffset;
-    const docHeight    = document.body.scrollHeight - window.innerHeight;
-    const scrollPct    = (scrollTop / docHeight) * 100;
-    progressBar.style.width = scrollPct + '%';
+    const pct = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100;
+    progressBar.style.width = pct + '%';
   });
 
 
-  /* ─── 15. CONSOLE EASTER EGG ────────────────────────────────── */
-  console.log('%c MEHDI EL MOUSSAOUI ', 'background:#c8f04a;color:#0a0a0a;font-family:monospace;font-size:16px;font-weight:bold;padding:8px 16px;');
-  console.log('%c Mobile & Web Developer | Tangier, Morocco ', 'color:#4af0c8;font-family:monospace;font-size:12px;');
+  /* ─── 12. CONSOLE EASTER EGG ────────────────────────────────── */
+  console.log('%c MEHDI EL MOUSSAOUI ', 'background:#f5a623;color:#0d0c1a;font-family:monospace;font-size:16px;font-weight:bold;padding:8px 16px;');
+  console.log('%c Mobile, Flutter & Web Developer | Tangier, Morocco ', 'color:#7c6bff;font-family:monospace;font-size:12px;');
   console.log('%c mehdielmoussaoui25@gmail.com | +212 771 189 375 ', 'color:#666;font-family:monospace;font-size:11px;');
+  console.log('%c LinkedIn: linkedin.com/in/mehdi-el-moussaoui-471174372 ', 'color:#4ef0b8;font-family:monospace;font-size:11px;');
 
 });
