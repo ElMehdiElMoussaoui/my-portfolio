@@ -755,3 +755,64 @@ section {
   .services-grid { padding: 0 1.5rem; }
   .hero-title { font-size: clamp(2.8rem, 14vw, 4rem); }
 }
+/* =========================================
+   Mobile Responsiveness Fix 
+   (إصلاح شاشة الهاتف)
+========================================= */
+
+@media screen and (max-width: 768px) {
+    /* 1. إصلاح النص الكبير المتداخل (MOBILE WEB DEVELOPER) */
+    .hero h1, .hero-inner h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0 !important;
+        margin-bottom: 15px;
+    }
+
+    /* إصلاح النص الوصفي تحت العنوان */
+    .hero-subtext {
+        font-size: 1rem !important;
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+
+    /* 2. ترتيب الأزرار (Hire Me / Projects) لتصبح فوق بعضها */
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .btn-main, .btn-outline {
+        width: 100%;
+        text-align: center;
+        margin: 0 !important;
+    }
+
+    /* 3. ترتيب الإحصائيات (5 Apps, 2 Years...) لتنزل في سطر جديد */
+    .hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+
+    .stat-item {
+        flex: 1 1 40%; /* يجعل كل عنصر يأخذ تقريباً نصف المساحة */
+        text-align: center;
+    }
+    
+    .stat-item h2 {
+        font-size: 2.2rem !important;
+        margin-bottom: 5px;
+    }
+    
+    .stat-item p {
+        font-size: 0.85rem !important;
+    }
+}
